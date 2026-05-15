@@ -1,0 +1,1186 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f6f1e8;
+    font-family:'EB Garamond', serif;
+    overflow-x:hidden;
+}
+
+/* HIDE SCROLLBAR */
+
+/* Chrome, Safari, Edge */
+
+::-webkit-scrollbar{
+    display:none;
+}
+
+/* Firefox */
+
+html{
+    scrollbar-width:none;
+}
+
+/* IE */
+
+body{
+    -ms-overflow-style:none;
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    background-image:url('../images/bg.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.45)
+    );
+}
+
+/* =========================
+   GRAIN
+========================= */
+
+.grain{
+    position:fixed;
+    inset:0;
+
+    background-image:url('https://grainy-gradients.vercel.app/noise.svg');
+
+    opacity:0.12;
+
+    pointer-events:none;
+
+    z-index:100;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    padding:20px;
+
+    max-width:700px;
+}
+
+.small-text{
+    color:#e8ddd0;
+
+    font-size:1rem;
+    letter-spacing:3px;
+
+    margin-bottom:24px;
+
+    text-transform:uppercase;
+}
+
+.main-title{
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:5.5rem;
+    font-weight:400;
+
+    line-height:1.05;
+
+    color:#fff;
+
+    margin-bottom:20px;
+}
+
+.subtitle{
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.5rem;
+
+    color:#e7d8cb;
+
+    margin-bottom:50px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.enter-button{
+    display:inline-block;
+
+    padding:16px 42px;
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.05rem;
+    letter-spacing:1px;
+
+    backdrop-filter:blur(4px);
+
+    transition:all 0.4s ease;
+
+    background:rgba(255,255,255,0.05);
+}
+
+.enter-button:hover{
+
+    background:rgba(255,255,255,0.15);
+
+    transform:translateY(-3px);
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:fadeUp 1.2s ease forwards;
+
+}
+
+.delay-1{
+    animation-delay:0.4s;
+}
+
+.delay-2{
+    animation-delay:0.8s;
+}
+
+.delay-3{
+    animation-delay:1.2s;
+}
+
+@keyframes fadeUp{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:3.5rem;
+    }
+
+    .subtitle{
+        font-size:2rem;
+    }
+
+    .enter-button{
+        padding:14px 32px;
+    }
+
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:140px 8%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f6f1e8,
+        #efe6d7
+    );
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.about-header{
+
+    text-align:center;
+
+    margin-bottom:100px;
+
+}
+
+.journal-intro{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.3rem;
+
+    color:#9b7b73;
+
+    margin-bottom:25px;
+
+}
+
+.about-title{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:4rem;
+
+    font-weight:400;
+
+    line-height:1.25;
+
+    color:#4a342c;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-container{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:40px;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+/* MEMORY CARD */
+
+.memory-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,0.45);
+
+    border:1px solid rgba(75,56,50,0.12);
+
+    padding:50px;
+
+    backdrop-filter:blur(3px);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+    transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+
+}
+
+.memory-card:nth-child(even){
+
+    margin-left:80px;
+
+}
+
+.memory-card:nth-child(odd){
+
+    margin-right:80px;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.08);
+
+}
+
+/* NUMBER */
+
+.card-number{
+
+    position:absolute;
+
+    top:20px;
+    right:28px;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:1.2rem;
+
+    letter-spacing:2px;
+
+    color:#b59b8a;
+
+}
+
+/* CARD TEXT */
+
+.memory-card p{
+
+    font-size:1.65rem;
+
+    line-height:1.8;
+
+    color:#4b3832;
+
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.about-bottom{
+
+    margin-top:120px;
+
+    text-align:center;
+
+}
+
+.bottom-text{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.8rem;
+
+    color:#9b7b73;
+
+    margin-bottom:35px;
+
+}
+
+/* BUTTON */
+
+.next-button{
+
+    display:inline-block;
+
+    padding:16px 40px;
+
+    border:1px solid rgba(75,56,50,0.2);
+
+    color:#4b3832;
+
+    text-decoration:none;
+
+    font-size:1rem;
+
+    letter-spacing:1px;
+
+    background:rgba(255,255,255,0.4);
+
+    transition:all 0.4s ease;
+
+}
+
+.next-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#f7efe5;
+
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .about-section{
+
+        padding:100px 7%;
+
+    }
+
+    .about-title{
+
+        font-size:2.5rem;
+
+    }
+
+    .journal-intro{
+
+        font-size:1.8rem;
+
+    }
+
+    .memory-card{
+
+        padding:35px 30px;
+
+    }
+
+    .memory-card:nth-child(even),
+    .memory-card:nth-child(odd){
+
+        margin:0;
+
+    }
+
+    .memory-card p{
+
+        font-size:1.3rem;
+
+        line-height:1.7;
+
+    }
+
+    .bottom-text{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+/* =========================
+   TIMELINE PAGE
+========================= */
+
+.timeline-section{
+
+    position:relative;
+
+    padding:140px 8%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #efe6d7,
+        #f6f1e8
+    );
+
+    overflow:hidden;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.timeline-header{
+
+    text-align:center;
+
+    margin-bottom:120px;
+
+}
+
+.timeline-subtitle{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.4rem;
+
+    color:#9b7b73;
+
+    margin-bottom:20px;
+
+}
+
+.timeline-title{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:4.2rem;
+
+    font-weight:400;
+
+    color:#4b3832;
+
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding-left:50px;
+
+}
+
+/* LINE */
+
+.timeline-line{
+
+    position:absolute;
+
+    left:14px;
+    top:0;
+
+    width:2px;
+    height:100%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(181,155,138,0.2),
+        rgba(181,155,138,0.7),
+        rgba(181,155,138,0.2)
+    );
+
+}
+
+/* ITEM */
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:90px;
+
+}
+
+/* DOT */
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:-44px;
+    top:14px;
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:#b89b72;
+
+    box-shadow:
+    0 0 15px rgba(184,155,114,0.5);
+
+}
+
+/* CONTENT */
+
+.timeline-content{
+
+    background:rgba(255,255,255,0.45);
+
+    padding:45px;
+
+    border:1px solid rgba(75,56,50,0.1);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.04);
+
+}
+
+/* PHASE */
+
+.timeline-phase{
+
+    display:block;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:1.9rem;
+
+    color:#9b7b73;
+
+    margin-bottom:18px;
+
+}
+
+/* TEXT */
+
+.timeline-content p{
+
+    font-size:1.45rem;
+
+    line-height:1.9;
+
+    color:#4b3832;
+
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.timeline-bottom{
+
+    margin-top:80px;
+
+    text-align:center;
+
+}
+
+.timeline-ending{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.8rem;
+
+    color:#9b7b73;
+
+    margin-bottom:35px;
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .timeline-section{
+
+        padding:100px 7%;
+
+    }
+
+    .timeline-title{
+
+        font-size:2.8rem;
+
+    }
+
+    .timeline-subtitle{
+
+        font-size:2rem;
+
+    }
+
+    .timeline{
+
+        padding-left:35px;
+
+    }
+
+    .timeline-content{
+
+        padding:30px;
+
+    }
+
+    .timeline-content p{
+
+        font-size:1.2rem;
+
+        line-height:1.8;
+
+    }
+
+    .timeline-phase{
+
+        font-size:1.5rem;
+
+    }
+
+    .timeline-ending{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+/* =========================
+   QUESTION PAGE
+========================= */
+
+.question-section{
+
+    position:relative;
+
+    width:100%;
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #f8f2ea,
+        #efe4d4
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    padding:40px;
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.question-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    max-width:900px;
+
+}
+
+/* INTRO */
+
+.question-intro{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.5rem;
+
+    color:#9b7b73;
+
+    margin-bottom:30px;
+
+}
+
+/* TITLE */
+
+.question-title{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:4.8rem;
+
+    font-weight:400;
+
+    line-height:1.2;
+
+    color:#4b3832;
+
+    margin-bottom:35px;
+
+}
+
+/* TEXT */
+
+.question-text{
+
+    font-size:1.6rem;
+
+    line-height:1.9;
+
+    color:#5b463f;
+
+    margin-bottom:22px;
+
+}
+
+.second-text{
+
+    margin-top:35px;
+
+}
+
+/* FINAL QUESTION */
+
+.final-question{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:3.5rem;
+
+    font-weight:400;
+
+    color:#9b7b73;
+
+    margin-top:45px;
+    margin-bottom:55px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.question-buttons{
+
+    display:flex;
+
+    gap:25px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+/* YES BUTTON */
+
+.yes-button,
+.soft-button{
+
+    padding:16px 42px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    letter-spacing:1px;
+
+    transition:all 0.4s ease;
+
+    font-family:'EB Garamond', serif;
+
+}
+
+/* YES */
+
+.yes-button{
+
+    background:#b89b72;
+
+    color:white;
+
+}
+
+.yes-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(184,155,114,0.3);
+
+}
+
+/* SOFT */
+
+.soft-button{
+
+    background:rgba(255,255,255,0.55);
+
+    border:1px solid rgba(75,56,50,0.1);
+
+    color:#4b3832;
+
+}
+
+.soft-button:hover{
+
+    background:white;
+
+    transform:translateY(-4px);
+
+}
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(246,241,232,0.97),
+        rgba(239,228,212,0.98)
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:20;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+
+}
+
+.final-screen.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+/* FINAL TEXT */
+
+.final-line{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:3rem;
+
+    color:#9b7b73;
+
+    margin-bottom:25px;
+
+}
+
+.final-screen h1{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:5rem;
+
+    font-weight:400;
+
+    color:#4b3832;
+
+}
+
+/* =========================
+   PETALS
+========================= */
+
+.petals span{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:rgba(185,132,132,0.25);
+
+    border-radius:60% 40% 70% 30%;
+
+    animation:floatPetals linear infinite;
+
+}
+
+/* INDIVIDUAL PETALS */
+
+.petals span:nth-child(1){
+
+    left:10%;
+    animation-duration:12s;
+    animation-delay:0s;
+
+}
+
+.petals span:nth-child(2){
+
+    left:25%;
+    animation-duration:18s;
+    animation-delay:3s;
+
+}
+
+.petals span:nth-child(3){
+
+    left:40%;
+    animation-duration:14s;
+    animation-delay:2s;
+
+}
+
+.petals span:nth-child(4){
+
+    left:60%;
+    animation-duration:20s;
+    animation-delay:1s;
+
+}
+
+.petals span:nth-child(5){
+
+    left:75%;
+    animation-duration:15s;
+    animation-delay:5s;
+
+}
+
+.petals span:nth-child(6){
+
+    left:90%;
+    animation-duration:17s;
+    animation-delay:4s;
+
+}
+
+/* FLOAT */
+
+@keyframes floatPetals{
+
+    0%{
+
+        transform:
+        translateY(110vh)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-20vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================
+   FADE IN
+========================= */
+
+.fade-in{
+
+    opacity:0;
+
+    animation:fadeIn 2s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .question-title{
+
+        font-size:3rem;
+
+    }
+
+    .question-text{
+
+        font-size:1.25rem;
+
+        line-height:1.8;
+
+    }
+
+    .final-question{
+
+        font-size:2.4rem;
+
+    }
+
+    .question-intro{
+
+        font-size:2rem;
+
+    }
+
+    .final-screen h1{
+
+        font-size:3rem;
+
+        padding:0 20px;
+
+    }
+
+    .final-line{
+
+        font-size:2.2rem;
+
+    }
+
+}
